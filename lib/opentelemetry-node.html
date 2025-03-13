@@ -61,6 +61,9 @@ RED.nodes.registerType('OpenTelemetry', {
     ignoredTypes: {
       value: 'debug,catch',
     },
+    ignoredFlows: {
+      value: '',
+    },
     propagateHeadersTypes: {
       value: '',
     },
@@ -182,8 +185,12 @@ RED.nodes.registerType('OpenTelemetry', {
     <input type="text" id="node-input-rootPrefix" placeholder="Message ">
   </div>
   <div class="form-row" title="Do not trace nodes of these types">
-    <label for="node-input-ignoredTypes"><i class="fa fa-ban"></i> Ignored</label>
+    <label for="node-input-ignoredTypes"><i class="fa fa-ban"></i> Ignored types</label>
     <input type="text" id="node-input-ignoredTypes" placeholder="debug,catch">
+  </div>
+  <div class="form-row" title="Do not trace nodes from these flows">
+    <label for="node-input-ignoredFlows"><i class="fa fa-ban"></i> Ignored flows</label>
+    <input type="text" id="node-input-ignoredFlows" placeholder="2d2e1fa059c32b74,3a69a53dd062b579">
   </div>
   <div class="form-row" title="Forward trace headers on these types of nodes">
     <label for="node-input-propagateHeadersTypes"><i class="fa fa-suitcase"></i> Propagate</label>
